@@ -1,0 +1,22 @@
+PODS:
+  - extended_clipboard (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - extended_clipboard (from `.symlinks/plugins/extended_clipboard/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  extended_clipboard:
+    :path: ".symlinks/plugins/extended_clipboard/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  extended_clipboard: 25b49d63d1fcedd96e0ab73638fe9a5fbc5e74bd
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1

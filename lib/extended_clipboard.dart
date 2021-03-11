@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 class ExtendedClipboard {
@@ -36,27 +35,27 @@ class ExtendedClipboard {
   }
 }
 
-class ExtendedCupertinoTextSelectionControls extends CupertinoTextSelectionControls {
-  final Function(File image) onPasteImage;
-
-  ExtendedCupertinoTextSelectionControls({@required this.onPasteImage});
-
-  @override
-  Future<void> handlePaste(TextSelectionDelegate delegate) async {
-    final TextEditingValue value = delegate.textEditingValue;
-    final data = await ExtendedClipboard.clipboard();
-    if (data != null) {
-      if (data is File) {
-        onPasteImage(data);
-      } else if (data is String) {
-        delegate.textEditingValue = TextEditingValue(
-          text:
-              value.selection.textBefore(value.text) + data + value.selection.textAfter(value.text),
-          selection: TextSelection.collapsed(offset: value.selection.start + data.length),
-        );
-      }
-    }
-    delegate.bringIntoView(delegate.textEditingValue.selection.extent);
-    delegate.hideToolbar();
-  }
-}
+// class ExtendedCupertinoTextSelectionControls extends CupertinoTextSelectionControls {
+//   final Function(File image) onPasteImage;
+//
+//   ExtendedCupertinoTextSelectionControls({@required this.onPasteImage});
+//
+//   @override
+//   Future<void> handlePaste(TextSelectionDelegate delegate) async {
+//     final TextEditingValue value = delegate.textEditingValue;
+//     final data = await ExtendedClipboard.clipboard();
+//     if (data != null) {
+//       if (data is File) {
+//         onPasteImage(data);
+//       } else if (data is String) {
+//         delegate.textEditingValue = TextEditingValue(
+//           text:
+//               value.selection.textBefore(value.text) + data + value.selection.textAfter(value.text),
+//           selection: TextSelection.collapsed(offset: value.selection.start + data.length),
+//         );
+//       }
+//     }
+//     delegate.bringIntoView(delegate.textEditingValue.selection.extent);
+//     delegate.hideToolbar();
+//   }
+// }
